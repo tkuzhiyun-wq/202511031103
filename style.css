@@ -1,0 +1,56 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+body{
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+  background: #0f1113;
+  color: #e9eef0;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+  background: linear-gradient(90deg,#0b1320,#16202b);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.topbar h1{ margin:0; font-size:18px; }
+.controls{ display:flex; gap:12px; align-items:center; }
+.file-label input{ margin-left:8px; }
+.sample-link{ color:#7de3cc; text-decoration:none; font-size:14px; }
+
+main{ display:flex; gap:18px; padding:18px; align-items:flex-start; }
+#quizContainer{ flex:1; max-width:720px; }
+#visualArea{ flex:0 0 100%; height:220px; }
+
+#quizArea{ background: rgba(255,255,255,0.03); padding:16px; border-radius:8px; box-shadow: 0 6px 18px rgba(2,6,8,0.6); }
+.qcard{ padding:10px 12px; border-radius:6px; margin-bottom:10px; background: rgba(0,0,0,0.15); }
+.qcard.correct{ border-left:6px solid #39d98a; }
+.qcard.incorrect{ border-left:6px solid #ff6b6b; }
+.qcard h3{ margin:0 0 12px 0; font-size:16px; text-align:center; word-wrap:break-word; overflow-wrap:break-word; }
+.options-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:0 0 10px 0; }
+.option{ display:flex; align-items:center; padding:8px 10px; background:rgba(255,255,255,0.05); border-radius:5px; cursor:pointer; border:1px solid rgba(255,255,255,0.1); transition:all 0.2s; }
+.option:hover{ background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); }
+.option input{ margin-right:8px; flex-shrink:0; }
+.option span{ word-wrap:break-word; overflow-wrap:break-word; font-size:14px; }
+.qfeedback{ margin-top:8px; font-size:14px; color:#cfd8dc; }
+
+.btnWrap{ display:flex; gap:8px; margin-top:12px; }
+button{ background:#2ec4b6; border:none; color:#04303a; padding:8px 12px; border-radius:6px; cursor:pointer; font-weight:600; }
+button#retryBtn{ background: #ddd; color:#222; }
+
+.result{ margin-top:12px; padding:12px; background: rgba(255,255,255,0.02); border-radius:6px; }
+.result h2{ margin:0 0 6px 0; }
+.result .msg{ margin:0; color:#bfe8dd; }
+
+@media (min-width:900px){
+  main{ align-items:flex-start; }
+  #visualArea{ flex:0 0 360px; }
+}
